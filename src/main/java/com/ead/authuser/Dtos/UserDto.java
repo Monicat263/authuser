@@ -3,6 +3,7 @@ package com.ead.authuser.Dtos;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonView;
 import lombok.Data;
+import org.hibernate.annotations.Type;
 
 import java.util.UUID;
 
@@ -16,7 +17,7 @@ public class UserDto {
         public static interface PasswordPut{}
         public static interface ImagePut{}
     }
-
+//    @JsonView({UserView.RegistrationPost.class, UserView.UserPut.class})
     private UUID userId;
     @JsonView(UserView.RegistrationPost.class)
     private String username;
